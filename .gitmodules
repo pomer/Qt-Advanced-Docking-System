@@ -1,0 +1,4 @@
+[submodule "nuevo"]
+	path = nuevo
+	url = https://github.com/pomer/nuevo.git
+	branch = main
