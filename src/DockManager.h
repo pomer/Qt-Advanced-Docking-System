@@ -258,10 +258,12 @@ public:
 		AutoHideHasCloseButton = 0x80, //< If the flag is set an auto hide title bar has a close button
 		AutoHideHasMinimizeButton = 0x100, ///< if this flag is set, the auto hide title bar has a minimize button to collapse the dock widget
         AutoHideOpenOnDragHover = 0x200,  ///< if this flag is set, dragging hover the tab bar will open the dock
+        AutoHideCloseOnOutsideMouseClick = 0x400, ///< if this flag is set, the auto hide dock container will collapse if the user clicks outside of the container, if not set, the auto hide container can be closed only via click on sidebar tab
 
 		DefaultAutoHideConfig = AutoHideFeatureEnabled
 			                  | DockAreaHasAutoHideButton
 			                  | AutoHideHasMinimizeButton
+			                  | AutoHideCloseOnOutsideMouseClick
 
 	};
     Q_DECLARE_FLAGS(AutoHideFlags, eAutoHideFlag)

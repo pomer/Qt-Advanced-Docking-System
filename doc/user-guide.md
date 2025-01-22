@@ -51,6 +51,7 @@
   - [`AutoHideHasCloseButton`](#autohidehasclosebutton)
   - [`AutoHideHasMinimizeButton`](#autohidehasminimizebutton)
   - [`AutoHideOpenOnDragHover`](#autohideopenondraghover)
+  - [`AutoHideCloseOnOutsideMouseClick`](#autohidecloseonoutsidemouseclick)
 - [DockWidget Feature Flags](#dockwidget-feature-flags)
   - [`DockWidgetClosable`](#dockwidgetclosable)
   - [`DockWidgetMovable`](#dockwidgetmovable)
@@ -713,7 +714,6 @@ If this flag is set (disabled by default), then each auto hide widget has a mini
 
 ![AutoHideHasMinimizeButton](cfg_flag_AutoHideHasMinimizeButton.png)
 
-
 ### `AutoHideOpenOnDragHover`
 
 If this flag is set (disabled by default), then holding a dragging cursor hover an auto-hide collapsed dock's tab will open said dock:
@@ -721,6 +721,12 @@ If this flag is set (disabled by default), then holding a dragging cursor hover 
 ![AutoHideOpenOnDragHover](cfg_flag_AutoHideOpenOnDragHover.gif)
 
 Said dock must be set to accept drops to hide when cursor leaves its scope. See `AutoHideDragNDropExample` for more details.
+
+### `AutoHideCloseOnOutsideMouseClick`
+
+If this flag is set (default), the auto hide dock container will collapse if the
+user clicks outside of the container. If not set, the auto hide container can be
+closed only via click on auto hide sidebar tab.
 
 ## DockWidget Feature Flags
 
@@ -847,7 +853,7 @@ When an entire area is closed, the default behavior is to hide the dock widgets 
 
 It is possible to globally lock features of all dock widgets to "freeze" the
 current workspace layout. That means, you can now lock your workspace
-to avoid accidentally dragging a docked view. When locking was't possible,
+to avoid accidentally dragging a docked view. When locking wasn't possible,
 users had to manually dock it back to the desired place after each accidental
 undock.
 

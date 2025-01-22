@@ -602,8 +602,12 @@ bool CAutoHideDockContainer::eventFilter(QObject* watched, QEvent* event)
 			return Super::eventFilter(watched, event);
 		}
 
-		// user clicked into container - collapse the auto hide widget
-		collapseView(true);
+		// user clicked outside of autohide container - collapse the auto hide widget
+		if (CDockManager::testAutoHideConfigFlag(
+		    CDockManager::AutoHideCloseOnOutsideMouseClick))
+		{
+			collapseView(true);
+		}
 	}
     else if (event->type() == internal::FloatingWidgetDragStartEvent)
     {
