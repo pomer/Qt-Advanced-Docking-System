@@ -161,6 +161,7 @@ know it from Visual Studio.
   - [Auto-Hide Functionality](#auto-hide-functionality)
 - [Python Bindings](#python-bindings)
   - [PySide6](#pyside6)
+  - [PyQt6](#pyqt6)
   - [PyQt5](#pyqt5)
 - [Tested Compatible Environments](#tested-compatible-environments)
   - [Supported Qt Versions](#supported-qt-versions)
@@ -189,7 +190,7 @@ know it from Visual Studio.
   - [RDE – Robox Development Environment](#rde--robox-development-environment)
   - [ResInsight](#resinsight)
   - [ADTF 3](#adtf-3)
-  - [DREAM.3D NX](#dream3d-nx)
+  - [DREAM3D-NX](#dream3d-nx)
   - [LabPlot](#labplot)
 - [Alternative Docking System Implementations](#alternative-docking-system-implementations)
   - [KDDockWidgets](#kddockwidgets)
@@ -308,7 +309,7 @@ More about the auto hide configuration options in the [online documentation...](
 ![Python Logo](doc/python_logo.png)
 
 Thanks to the contribution of several users, the Advanced Docking System comes
-with a complete Python integration. Python bindings are available for **PyQt5** and
+with a complete Python integration. Python bindings are available for **PyQt5**, **PyQt6**, and
 **PySide6**.
 
 ### PySide6
@@ -327,6 +328,24 @@ The PySide6 bindings were contributed by:
 - [mborgerson](https://github.com/mborgerson)
 
 Please file PySide6-QtAds-specific issues on its [pyside6_qtads](https://github.com/mborgerson/pyside6_qtads) fork for tracking. For more information about the PySide6 bindings read [this](https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System/issues/298) issue.
+
+### PyQt6
+
+A PyQt6 ADS package is available via PyPi and can be installed on Windows,
+macOS, and Linux with:
+
+```bash
+pip install PyQt6Ads
+```
+
+Sample code is available [here](https://github.com/pyapp-kit/PyQt6Ads/tree/main/examples).
+
+The PyQt6 bindings were contributed by:
+
+- [tlambert03](https://github.com/tlambert03)
+
+Please file PyQt6Ads-specific issues at [pyapp-kit/PyQt6Ads](https://github.com/pyapp-kit/PyQt6Ads).
+
 
 ### PyQt5
 
@@ -667,15 +686,17 @@ says about the switch to Qt Advanced Docking:
 
 ![ADTF](doc/showcase_adtf.png)
 
-### [DREAM.3D NX](https://github.com/BlueQuartzSoftware/DREAM3D)
+### [DREAM3D-NX](https://www.dream3d.io)
 
-DREAM.3D *(Digital Representation Environment for Analysis of Materials in 3D)* is an open source, cross-platform and modular, software suite that allows users to prepare, reconstruct, quantify, instantiate, and mesh, multidimensional, multimodal microstructural data, as well as many other applications.
+DREAM3D-NX *(Digital Representation Environment for Analysis of Materials in 3D)* is a cross-platform and modular, software suite that allows users to prepare, reconstruct, quantify, instantiate, and mesh, multidimensional, multimodal microstructural data, as well as many other applications.
 
-[BlueQuartz Software](http://www.bluequartz.net/) is currently completely rewriting the DREAM.3D application. For the upcoming version **[DREAM3D NX](http://www.dream3d.io/)** they improved the UI by using the Advanced Docking System. An [early version](http://www.dream3d.io/) of **DREAM3D NX** with ADS is already available to any user who would like to take the brand new version out for a spin.
+[BlueQuartz Software](http://www.bluequartz.net/) has completely rewritten the old DREAM.3D version 6.5 application
+taking advantage of the Advanced Docking System to present a highly customizable user interface
+for DREAM3D-NX Version 7.
 
 ![DREAM.3D NX](doc/showcase_dream3d_nx.png)
 
-[read more...](http://dream3d.bluequartz.net/)
+[read more...](http://www.dream3d.io/)
 
 ### [LabPlot](https://labplot.kde.org/)
 

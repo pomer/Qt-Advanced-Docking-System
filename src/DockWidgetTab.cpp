@@ -599,9 +599,9 @@ void CDockWidgetTab::setActiveTab(bool active)
 	if (CDockManager::testConfigFlag(CDockManager::FocusHighlighting) && !d->DockWidget->dockManager()->isRestoringState())
 	{
 		bool UpdateFocusStyle = false;
-		if (active && !hasFocus())
-		{
-			//setFocus(Qt::OtherFocusReason);
+        // Update the focus only, if this the dock area of this tab is the focused dock area
+        if (active && !hasFocus() && (d->focusController()->focusedDockArea() == this->dockAreaWidget()))
+		{            
 			d->focusController()->setDockWidgetTabFocused(this);
 			UpdateFocusStyle = true;
 		}
