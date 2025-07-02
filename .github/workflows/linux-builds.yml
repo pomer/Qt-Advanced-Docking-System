@@ -1,6 +1,8 @@
 name: linux-builds
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:  
   build_ubuntu_2204_cmake:
