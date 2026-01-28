@@ -460,6 +460,12 @@ CDockAreaWidget::CDockAreaWidget(CDockManager* DockManager, CDockContainerWidget
 
 	d->createTitleBar();
 	d->ContentsLayout = new DockAreaLayout(d->Layout);
+
+	if (CDockManager::testConfigFlag(CDockManager::UseNativeWindows))
+	{
+		winId();
+	}
+
 	if (d->DockManager)
 	{
 		Q_EMIT d->DockManager->dockAreaCreated(this);
@@ -925,6 +931,19 @@ void CDockAreaWidget::updateTitleBarVisibility()
 		d->TitleBar->showAutoHideControls(IsAutoHide);
 		updateTitleBarButtonVisibility(Container->topLevelDockArea() == this);
 	}
+}
+
+
+//============================================================================
+void CDockAreaWidget::updateWindowTitle()
+{
+	auto currentWidget = d->ContentsLayout->currentWidget();
+	if (d->TitleBar && currentWidget)
+	{
+		d->TitleBar->autoHideTitleLabel()->setText(currentWidget->windowTitle());
+	}
+
+	markTitleBarMenuOutdated();
 }
 
 
